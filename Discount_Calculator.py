@@ -7,22 +7,15 @@ class Item:
         self.quantity = quantity
         self.off_percent = off_percent
 
-    # def calculate_total_price(self):
-    #     return self.price * self.quantity
+    def calculate_total_price(self):
+        Org_price = self.price * self.quantity
+        return Org_price 
 
     def apply_discount(self):
-        after_discount = (self.price * (100 - self.off_percent))/100
-        print(after_discount)
-        return after_discount
+        after_discount = ((self.price * (100 - self.off_percent))/100) * self.quantity
+        return float(after_discount)
         # return (after_discount)
 
     def __repr__(self):
-        return self.apply_discount()
-
-# item1 = Item("Phone", 100, 1)
-# item2 = Item("Laptop", 1000, 3)
-# item3 = Item("Cable", 10, 5)
-# item4 = Item("Mouse", 50, 5)
-# item5 = Item("Keyboard", 75, 5)
-
-# print(Item.all)
+        # dis_price = self.apply_discount()
+        return f"The orginal price was {self.calculate_total_price()} you got it for {self.apply_discount()}"
