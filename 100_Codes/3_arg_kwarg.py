@@ -1,3 +1,5 @@
+#  Python program that demonstrates the use of *args and **kwargs in a function
+
 import unittest
 
 def custom_function(arg1, *args, kwarg1=None, **kwargs):
